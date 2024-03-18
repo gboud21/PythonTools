@@ -1,0 +1,15 @@
+@startuml
+'Style Modifiers
+'This modifier prevents text from overlapping
+skinparam fixCircleLabelOverlapping true
+
+'Application Component
+component [Application] as Application
+
+'RMLogger component 
+component [RMLogger]
+
+'Associations to Application
+Application ..> RMLogger
+
+@enduml

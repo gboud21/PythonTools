@@ -1,0 +1,15 @@
+@startuml
+'Style Modifiers
+'This modifier prevents text from overlapping
+skinparam fixCircleLabelOverlapping true
+
+'Logger Component
+component [RMLogger] as RMLogger
+
+'Python Logger 
+component [Logger] #Magenta
+
+'Associations to RMLogger
+RMLogger ..> Logger
+
+@enduml

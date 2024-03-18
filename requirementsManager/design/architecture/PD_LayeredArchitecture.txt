@@ -1,0 +1,60 @@
+@startuml
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Layout Configuration
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+top to bottom direction
+skinparam linetype ortho
+skinparam fixCircleLabelOverlapping true
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Application Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package ApplicationLayer{
+    [Application]
+note top of Application
+The Application Layer provides the High-Level Control
+and coordination of the Requirements Manager Application
+end note
+}
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+UI Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+'TODO: Need to update this. It might get removed, or it could be some sort of interaction/terminal output 
+package UILayer{
+package UI{
+}
+
+note top of UI
+The UI Layer is responsible for handling the User Input
+related to the UI Elements and driving functionality
+down to the Buisness Layer
+end note
+}
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Buisness Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package BuisnessLayer{
+}
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Common Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package CommonLayer{
+package Common{
+    [RMLogger]
+}
+
+note top of Common
+The Common Layer is responsible for providing the framework
+that abstracts the Unity API as well as for providing
+the Base Classes that all higher level components will
+require to implement their functionality.
+end note
+}
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Layout Modifiers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+@enduml
