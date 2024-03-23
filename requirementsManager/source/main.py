@@ -2,7 +2,6 @@
 import sys
 from os.path import abspath
 from os.path import dirname
-import traceback
 
 # Internal Imports
 from com.lgg import logger
