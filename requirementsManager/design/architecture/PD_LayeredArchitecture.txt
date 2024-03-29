@@ -10,8 +10,8 @@ skinparam fixCircleLabelOverlapping true
 Application Layer
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
 package ApplicationLayer{
-    [Application]
-note top of Application
+    package app
+note top of app
 The Application Layer provides the High-Level Control
 and coordination of the Requirements Manager Application
 end note
@@ -36,6 +36,16 @@ end note
 Buisness Layer
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
 package BuisnessLayer{
+    package rptGen
+
+    package srs{
+        package gen as srsGen
+    }
+
+    package sss{
+        package gen as sssGen
+        package parse
+    }
 }
 
 /'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
@@ -43,7 +53,9 @@ Common Layer
 '''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
 package CommonLayer{
 package Common{
-    [RMLogger]
+    package err
+    package fio
+    package lgg
 }
 
 note top of Common

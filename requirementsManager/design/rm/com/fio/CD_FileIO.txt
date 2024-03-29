@@ -1,0 +1,12 @@
+@startuml
+
+class FileIO{
+    'Attributes
+    -char readMode = 'r'
+    -char writeMode = 'w'
+    '
+    +__init__(self)
+    +read(self, fileName)
+    +write(self, fileName, fileData)
+}
+@enduml

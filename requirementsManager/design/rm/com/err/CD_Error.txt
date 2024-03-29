@@ -1,0 +1,11 @@
+@startuml
+
+class Error{
+    +{abstract} __init__(self)
+}
+
+enum Severity
+{
+
+}
+@enduml
