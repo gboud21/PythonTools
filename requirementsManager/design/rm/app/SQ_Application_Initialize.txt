@@ -1,0 +1,14 @@
+@startuml
+'left to right direction
+skinparam linetype ortho
+skinparam fixCircleLabelOverlapping true
+
+abstract class Application{
+    'Attributes
+    'Operations
+    +{abstract} Application()
+}
+
+'LayoutModifiers
+@enduml
+

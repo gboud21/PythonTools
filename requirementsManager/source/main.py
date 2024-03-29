@@ -7,7 +7,3 @@ from os.path import dirname
 from com.lgg import logger
 
 if __name__ == '__main__':
-    lgg = logger.Logger("reqLogger")
-    lgg.initialize(abspath(dirname(sys.argv[0])) + abspath("/config/logConfig.json"))
-    lgg.logMessage("Starting Requirements Manager")
-    lgg.logError("Test Error", logger.Severity.NON_CRITICAL)

@@ -1,0 +1,6 @@
+SSS_PATH_JSON_ID = "SystemSpecPath"
+SRS_PATH_JSON_ID = "SoftwareSpecPath"
+OUTPUT_PATH_JSON_ID = "OutputPath"
+REQUIREMENT_TOKEN_JSON_ID = "RequirementToken"
+SSS_DELIMETER_JSON_ID = "SystemSpecDelimeter"
+SRS_FILE_TYPE_JSON_ID = "SoftwareSpecFileType"

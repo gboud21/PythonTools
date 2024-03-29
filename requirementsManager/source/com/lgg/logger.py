@@ -5,6 +5,7 @@ import pathlib
 from datetime import datetime
 from enum import Enum
 import traceback
+import sys
 
 ###################################################################################################################
 ### Enumeration that indicates the severity of an error detected by the application
@@ -49,6 +50,7 @@ class Logger:
                 self.logger.warning(self.__generateErrorMessage(logText,severity))
             case Severity.CRITICAL:
                 self.logger.critical(self.__generateErrorMessage(logText,severity))
+                sys.exit(1)
             case Severity.MAX_SEVERITY:
                 self.logger.exception(self.__generateErrorMessage("Unknown Log Type"), Severity.CRITICAL)
             case _:

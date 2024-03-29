@@ -17,10 +17,14 @@ The extracted data can then be used to generate formatted artifacts.
 ### Configuration File
 |Req ID|Requirement Text|
 |---|---|
+|1|The Configuration File shall use JSON format to define all configuration variables.|
 |1|The Configuration File shall use the "SystemSpecPath" field to specify the path to the Systems Requirement Specification.|
 |1|The Configuration File shall use the "SoftwareSpecPath" field to specify the path to the Software Requirement Specification.|
 |1|The Configuration File shall use the "OutputPath" field to specify the path to output the generated Software Requirement Specification and Requirements Update Table to.|
 |1|The Configuration File shall use the "RequirementToken" field to specify the pattern used to identify a requirement in the System Requirement Specification.|
+|1|The Configuration File shall use the "SystemSpecDelimeter" field to specify the pattern used to split the requirement's attributes within the System Requirement Specification.|
+|1|The Configuration File shall use the "SoftwareSpecFileType" field to specify the file type used to output the Software Requirements Specification as.|
+|1|The Configuration File shall support the following values for the "SoftwareSpecFileType" field:<br>md --> Markdown<br>html --> HTML.|
 
 ## Low-Level Requirements
 ### Fault Management

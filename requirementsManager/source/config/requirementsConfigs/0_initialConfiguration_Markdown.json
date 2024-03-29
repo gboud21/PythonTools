@@ -1,0 +1,8 @@
+{
+    "version" : 1,
+    "SystemSpecPath" : "/home/dapper/code/PythonTools/requirementsManager/test/testData/0_initialConfiguration/SSS_Requirements/MarkdownSystemSpec.md",
+    "OutputPath" : "/home/dapper/code/PythonTools/requirementsManager/test/testData/0_initialConfiguration/SRS_Requirements/",
+    "RequirementToken" : "REQ_",
+    "SystemSpecDelimeter" : "|",
+    "SoftwareSpecFileType" : "md"
+}
