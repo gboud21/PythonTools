@@ -53,7 +53,7 @@ class Application:
         self.logger.logMessage("Running Requirements Manager")
 
         # Load the SSS data
-        self.reqFileIO.read()
+        sssData = self.reqFileIO.read(self._sssPath)
 
         # Based on what file type is selected, call the appropriate system
 
@@ -71,17 +71,33 @@ class Application:
         except FileNotFoundError:
             # Catch and log exception for the file not being found
             self.logger.logError("Configuration File Not Found", logger.Severity.CRITICAL)
-        
+
+        # TODO: Add logic for optionally assigning SRS Path        
         # Assign path and parsing values to be used in the Running State
-        self._sssPath = configJsonData[ApplicationTypes.SSS_PATH_JSON_ID]
+        self.__configureRequiredValues(configJsonData)
 
-        # TODO: Add logic for optionally assigning SRS Path
 
-        # Assign remaining values from JSON
-        self._outputPath = configJsonData[ApplicationTypes.OUTPUT_PATH_JSON_ID]
-        self._requirementToken = configJsonData[ApplicationTypes.REQUIREMENT_TOKEN_JSON_ID]
-        self._sssDelimeter = configJsonData[ApplicationTypes.SSS_DELIMETER_JSON_ID]
-        self._srsFileType = configJsonData[ApplicationTypes.SRS_FILE_TYPE_JSON_ID]
+    ################################################################################################################
+    ### This functions retrieves the values that are required to be set in the JSON
+    def __configureRequiredValues(self, jsonData):
+        return (self.__configureValue(ApplicationTypes.SSS_PATH_JSON_ID, self._sssPath, jsonData) and 
+                self.__configureValue(ApplicationTypes.OUTPUT_PATH_JSON_ID, self._outputPath, jsonData) and 
+                self.__configureValue(ApplicationTypes.REQUIREMENT_TOKEN_JSON_ID, self._requirementToken, jsonData) and 
+                self.__configureValue(ApplicationTypes.SRS_FILE_TYPE_JSON_ID, self._srsFileType, jsonData))
+
+    ################################################################################################################
+    ### This functions retrieves the values that are required to be set in the JSON
+    def __configureValue(self, key, valueToSet, jsonData):
+        isValueConfigured = False
+
+        if key in jsonData:
+            valueToSet = jsonData[key]
+            isValueConfigured = True
+        else:
+            self.logger.logError(f'Configuration value not set: {key}', logger.Severity.CRITICAL)
+
+        return isValueConfigured
+
 
 
 if __name__ == '__main__':
