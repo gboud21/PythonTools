@@ -8,5 +8,5 @@ class IRequirementParser:
     
     ###################################################################################################################
     ### This function parses the specified Systems Requirement Specification file and stores the data in the data structure
-    def parseRequirement(self, requirementString):
+    def parseRequirement(self, sssPath: str):
         pass

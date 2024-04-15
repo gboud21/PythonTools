@@ -12,8 +12,5 @@ class MarkdownParser:
     
     ###################################################################################################################
     ### This function parses the specified Systems Requirement Specification file and stores the data in the data structure
-    def parseRequirements(self, systemSpecPath):
-        pass
-
-    def __parseRequirement(self, requirementString):
+    def parseRequirements(self, sssPath):
         pass

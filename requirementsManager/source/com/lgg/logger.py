@@ -25,7 +25,7 @@ class Logger:
     
     ###################################################################################################################
     ### Function to initialize the Logger's configuration
-    def initialize(self, configFilePath):
+    def initialize(self, configFilePath: str):
         # Convert the string into a path
         configFile = pathlib.Path(configFilePath)
 
@@ -38,12 +38,12 @@ class Logger:
 
     ###################################################################################################################
     ### Logs a debug message
-    def logMessage(self, logText):
+    def logMessage(self, logText: str):
         self.logger.debug(logText)
 
     ###################################################################################################################
     ### Logs an Error Message
-    def logError(self, logText, severity):
+    def logError(self, logText: str, severity: Severity):
         # Based on the severity, log a message
         match severity:
             case Severity.NON_CRITICAL:
@@ -58,6 +58,6 @@ class Logger:
 
     ###################################################################################################################
     ### Private Function to format the log for an error
-    def __generateErrorMessage(self, logText, severity):
+    def __generateErrorMessage(self, logText: str, severity: Severity):
         logSpacer = f"{'':=^80}"
         return f'{logSpacer}\n{severity}::{datetime.now()}: {logText}\n{traceback.format_stack()[-3:][0]}'

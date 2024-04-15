@@ -56,6 +56,12 @@ class Application:
         sssData = self.reqFileIO.read(self._sssPath)
 
         # Based on what file type is selected, call the appropriate system
+        if self._srsFileType == ApplicationTypes.FileType.MD:
+            print("File Type: Markdown")
+        elif self._srsFileType == ApplicationTypes.FileType.HTML:
+            print("File Type: HTML")
+        else:
+            self.logger.logError("File Type: Invalid", logger.Severity.CRITICAL)
 
         self.logger.logMessage("Requirements Manager Complete")
 
@@ -79,7 +85,7 @@ class Application:
 
     ################################################################################################################
     ### This functions retrieves the values that are required to be set in the JSON
-    def __configureRequiredValues(self, jsonData):
+    def __configureRequiredValues(self, jsonData) -> bool:
         return (self.__configureValue(ApplicationTypes.SSS_PATH_JSON_ID, self._sssPath, jsonData) and 
                 self.__configureValue(ApplicationTypes.OUTPUT_PATH_JSON_ID, self._outputPath, jsonData) and 
                 self.__configureValue(ApplicationTypes.REQUIREMENT_TOKEN_JSON_ID, self._requirementToken, jsonData) and 
@@ -87,9 +93,10 @@ class Application:
 
     ################################################################################################################
     ### This functions retrieves the values that are required to be set in the JSON
-    def __configureValue(self, key, valueToSet, jsonData):
+    def __configureValue(self, key: str, valueToSet, jsonData) -> bool:
         isValueConfigured = False
 
+        # If the specified key exists in the JSON Data then set the specified member variable to the value in the JSON Data
         if key in jsonData:
             valueToSet = jsonData[key]
             isValueConfigured = True
