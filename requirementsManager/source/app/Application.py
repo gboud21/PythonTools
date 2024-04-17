@@ -8,6 +8,9 @@ import json
 from app import ApplicationTypes
 from com.fio import fileIO
 from com.lgg import logger
+from sss.parse import markdownParser
+from sss.parse import htmlParser
+from sss.ctrl import systemReqController
 
 
 ###################################################################################################################
@@ -55,13 +58,19 @@ class Application:
         # Load the SSS data
         sssData = self.reqFileIO.read(self._sssPath)
 
-        # Based on what file type is selected, call the appropriate system
+        # Based on what file type is selected, instantiate the appropriate sss parser
         if self._srsFileType == ApplicationTypes.FileType.MD:
             print("File Type: Markdown")
+            reqParser = markdownParser.MarkdownParser()
         elif self._srsFileType == ApplicationTypes.FileType.HTML:
             print("File Type: HTML")
+            reqParser = htmlParser.HTMLParser()
         else:
             self.logger.logError("File Type: Invalid", logger.Severity.CRITICAL)
+
+        # Process the data for the SSS
+        sssController = systemReqController.SystemReqController(reqParser)
+        sssController.parseRequirements(self._sssPath)
 
         self.logger.logMessage("Requirements Manager Complete")
 
