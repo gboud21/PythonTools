@@ -1,2 +1,7 @@
+
+class ReportGenerator:
+
+
+
 if __name__ == '__main__':
-    print("Starting Requirements Manager")
+    print("Starting Report Generator")

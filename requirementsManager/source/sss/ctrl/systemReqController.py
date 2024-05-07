@@ -14,10 +14,15 @@ class SystemReqController():
     
     ###################################################################################################################
     ### This function parses the specified Systems Requirement Specification file and stores the data in the data structure
-    def parseRequirements(self, sssPath: str):
-        # Needs to read in the file, storing each line into a data structure
+    def parseRequirements(self, sssPath: str, outputPath: str):
+        # Read in the original SSS, storing each line into a data structure
         fileReader = fileIO.FileIO()
-        fileData = fileReader.read(sssPath)
+        originalSssData = fileReader.read(outputPath)
+
+        # Needs to read in the file, storing each line into a data structure
+        newSssData = fileReader.read(sssPath)
 
         # After reading in all of the requirements, pass the line of data into the requirement parser interface
-        sssReqArray = self.requirementParser.parseRequirement(fileData)
+        oldSssReqArray = self.requirementParser.parseRequirement(originalSssData)
+        newSssReqArray = self.requirementParser.parseRequirement(newSssData)
+        
