@@ -1,0 +1,17 @@
+@startuml
+
+class Logger{
+    'Attributes
+    -string name
+    'Operations
+    +__init__(self)
+    +initialize(self, configFilePath : string)
+    +logMessage(self, logText : string)
+    +logError(self, logText : string, severity : Severity)
+    -__generateErrorMessage(self, logText : string, severity : Severity)
+}
+
+class logger #Magenta
+
+Logger *--> "logger" logger
+@enduml

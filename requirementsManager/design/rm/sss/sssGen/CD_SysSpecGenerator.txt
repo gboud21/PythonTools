@@ -1,0 +1,6 @@
+@startuml
+
+class SysSpecGenerator{
+    +{abstract} __init__(self)
+}
+@enduml

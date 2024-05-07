@@ -1,0 +1,51 @@
+@startuml
+'Style Modifiers
+'This modifier prevents text from overlapping
+skinparam fixCircleLabelOverlapping true
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+SSS Components
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+component [SSS Generator] as sssGen
+note top of sssGen
+The SSS Generator component is responsible for 
+generating the SSS that is formatted in the
+style specfied by the applicaiton configuration
+file using a set of requirements.
+end note
+
+component [SSS Parser] as sssParse
+note top of sssParse
+The SSS Parser component is responsible for 
+reading an existing SSS, identifying the attributes
+for each requirement and returning a data structure
+containing all of the data detected in the SSS.
+end note
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+SRS Components
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+component [SRS Generator] as srsGen
+note top of srsGen
+The SRS Generator component is responsible for 
+generating a file for each requirement in the SSS
+that is formatted in the style specfied by the 
+applicaiton configuration.
+
+ToDo: Need to determine who is going to update existing
+SRS Files. Probably a helper class?
+end note
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+ReportGenerator Component
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+component [Report Generator] as rptGen
+note top of rptGen
+The Report Generator component is responsible for 
+generating a file that summarizes the actions 
+performed by the application to inform the user.
+end note
+
+'Associations to RMLogger
+'RMLogger ..> Logger
+
+@enduml

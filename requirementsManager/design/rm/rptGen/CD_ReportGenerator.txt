@@ -1,0 +1,6 @@
+@startuml
+
+class ReportGenerator{
+    +{abstract} __init__(self)
+}
+@enduml
