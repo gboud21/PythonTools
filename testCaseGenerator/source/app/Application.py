@@ -8,6 +8,8 @@ import json
 from app import ApplicationTypes
 from com.fio import fileIO
 from com.lgg import logger
+from testParse import testParser
+from testGen import gdbGenerator
 
 
 ###################################################################################################################
@@ -47,12 +49,14 @@ class Application:
         self.logger.logMessage("Running Test Generator")
 
         # Compile a list of all the test files in the input path
-
-        # For each Output Format
-        # Create a directory structure that mirrors the directory structure for the test files
+        parser = testParser.TestParser()
+        fileList = parser.buildFileList(self._inputScriptPath)
 
         # Iterate through the list of test scripts generating a test file in the appropriate directory structure
-        # for each of the output formats
+        # for each of the output formats. This will also create the root directory for the file structure that
+        # mirrors the directory structure for the test files
+        gdbGen = gdbGenerator.GdbGenerator()
+        gdbGen.generateGDBTestCases(fileList)
 
 if __name__ == '__main__':
     print("Requirements Manager Application Component")

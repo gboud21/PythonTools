@@ -5,3 +5,6 @@ class GdbGenerator:
     ### Constructor
     def __init__(self):
         pass
+
+    def generateGDBTestCases(self, fileList):
+        pass
