@@ -1,0 +1,14 @@
+{
+    "$schema": "../schemas/masterSchema.json",
+    "testScript": [
+        {
+            "file": "MyFile.cpp",
+            "lineNumber": 2
+        },
+        {
+            "class": "MyClass",
+            "functionName": "MyFunction",
+            "offset": "0x00000000"
+        }
+    ]
+}

@@ -1,0 +1,50 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+
+    "type": "object",
+    "properties": {
+      "testScript": {
+        "type": "array",
+        "items": {
+          "anyOf": [
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "file":{
+                    "description": "The file to set a breakpoint in.",
+                    "type": "string"
+                },
+                "lineNumber":{
+                    "description": "The line within the specified file to set a breakpoint on.",
+                    "type":"integer",
+                    "exclusiveMinimum": 0
+                }
+            },
+            "required": ["file", "lineNumber"]
+            }, 
+            {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "className":{
+                    "description": "The class to set a breakpoint on.",
+                    "type": "string"
+                },
+                "functionName":{
+                    "description": "The name of the function to set a breakpoint on.",
+                    "type":"string",
+                    "exclusiveMinimum": 0
+                },
+                "offset":{
+                    "description": "The memory offset from the start of the function to set a breakpoint on.",
+                    "type":"string"
+                }
+            },
+            "required": ["className", "functionName"]
+            }
+          ]
+        }
+      }
+    }
+  }

@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "breakpoint2",
+    "description": "This allows you to set a breakpoint within the code.",
+    "type": "object",
+    "oneOf": [
+      {
+        "properties": {
+          "file": {
+            "description": "The name of the file to set a breakpoint in.",
+            "type": "string"
+          },
+          "lineNumber":{
+            "description": "The line number within the file to set a breakpoint on.",
+            "type":"integer",
+            "exclusiveMinimum": 1
+          }
+        },
+        "required": ["file","lineNumber"]
+      },
+      {
+        "properties": {
+          "class": {
+            "description": "The name of the class that owns the function you are setting a breakpoint on.",
+            "type": "string"
+          },
+          "functionName":{
+            "description": "The name of the function within the class to set a breakpoint on.",
+            "type":"string"
+          },
+          "offset":{
+            "description": "The memory offset from the start of the function to set a breakpoint on.",
+            "type":"string"
+          }
+        },
+        "required": ["class","functionName","offset"]
+      }
+    ]
+}

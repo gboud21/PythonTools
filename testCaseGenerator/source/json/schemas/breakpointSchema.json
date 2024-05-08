@@ -1,0 +1,18 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "breakpoint",
+    "description": "This allows you to set a breakpoint within the code.",
+    "type": "object",
+    "properties": {
+      "file": {
+        "description": "The name of the file to set a breakpoint in.",
+        "type": "string"
+      },
+      "lineNumber":{
+        "description": "The line number within the file to set a breakpoint on.",
+        "type":"integer",
+        "exclusiveMinimum": 1
+      }
+    },
+    "required": ["file","lineNumber"]
+}
