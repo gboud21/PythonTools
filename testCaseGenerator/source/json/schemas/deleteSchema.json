@@ -1,14 +1,14 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "title": "breakpoint",
-    "description": "This allows you to set a breakpoint within the code.",
+    "title": "delete",
+    "description": "Deletes a breakpoint or a watchpoint.",
     "type": "object",
     "oneOf": [
       {
         "properties": {
           "operationType":{
-            "description": "breakpoint file:lineNumber",
-            "const": "breakpoint"
+            "description": "delete breakpoint file:lineNumber",
+            "const": "delete"
           },
           "file": {
             "description": "The name of the file to set a breakpoint in.",
@@ -25,8 +25,8 @@
       {
         "properties": {
           "operationType":{
-            "description": "breakpoint class:functionName + offset",
-            "const": "breakpoint"
+            "description": "delete breakpoint class:functionName + offset",
+            "const": "delete"
           },
           "class": {
             "description": "The name of the class that owns the function you are setting a breakpoint on.",
@@ -46,8 +46,8 @@
       {
         "properties": {
           "operationType":{
-            "description": "breakpoint file:functionName",
-            "const": "breakpoint"
+            "description": "delete breakpoint file:functionName",
+            "const": "delete"
           },
           "filename": {
             "description": "The name of the class that owns the function you are setting a breakpoint on.",

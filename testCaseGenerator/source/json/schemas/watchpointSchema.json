@@ -1,0 +1,21 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "watchpoint",
+    "description": "This allows you to set a watchpoint within the code.",
+    "type": "object",
+    "oneOf": [
+      {
+        "properties": {
+          "operationType":{
+            "description": "watchpoint expr",
+            "const": "watchpoint"
+          },
+          "expr": {
+            "description": "The expression to monitor for a change. A breakpoint will trigger when it changes.",
+            "type": "string"
+          }
+        },
+        "required": ["operationType", "expr"]
+      }
+    ]
+}

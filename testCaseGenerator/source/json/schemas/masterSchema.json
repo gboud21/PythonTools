@@ -10,8 +10,11 @@
             {
               "type": "object",
               "anyOf": [
+                {"$ref": "backtraceSchema.json"},
                 {"$ref": "breakpointSchema.json"},
-                {"$ref": "breakpointSchema2.json"}
+                {"$ref": "deleteSchema.json"},
+                {"$ref": "killSchema.json"},
+                {"$ref": "watchpointSchema.json"}
               ]
             }
           ]
