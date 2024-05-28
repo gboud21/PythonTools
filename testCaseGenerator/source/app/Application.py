@@ -36,7 +36,7 @@ class Application:
         self.logger.logMessage("Initializing Test Generator")
 
         # Load the configuration file
-        self.__loadConfiguration()
+        # self.__loadConfiguration()
 
         # Call any other applications initialization logic
 
@@ -50,13 +50,13 @@ class Application:
 
         # Compile a list of all the test files in the input path
         parser = testParser.TestParser()
-        fileList = parser.buildFileList(self._inputScriptPath)
-
+        testCases = parser.parseTestScripts(self._inputScriptPath)
+        
         # Iterate through the list of test scripts generating a test file in the appropriate directory structure
         # for each of the output formats. This will also create the root directory for the file structure that
         # mirrors the directory structure for the test files
         gdbGen = gdbGenerator.GdbGenerator()
-        gdbGen.generateGDBTestCases(fileList)
+        gdbGen.generateGDBTestCases(testCases)
 
 if __name__ == '__main__':
     print("Requirements Manager Application Component")

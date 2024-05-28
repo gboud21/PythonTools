@@ -3,7 +3,7 @@
     "title": "watchpoint",
     "description": "This allows you to set a watchpoint within the code.",
     "type": "object",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "operationType":{

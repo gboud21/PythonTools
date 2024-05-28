@@ -3,7 +3,7 @@
     "title": "backtrace",
     "description": "Prints the stack",
     "type": "object",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "operationType":{

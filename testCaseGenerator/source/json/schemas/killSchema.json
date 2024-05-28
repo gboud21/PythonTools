@@ -3,7 +3,7 @@
     "title": "kill",
     "description": "This forces the application to exit.",
     "type": "object",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "operationType":{

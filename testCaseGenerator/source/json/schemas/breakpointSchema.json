@@ -3,7 +3,7 @@
     "title": "breakpoint",
     "description": "This allows you to set a breakpoint within the code.",
     "type": "object",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "operationType":{

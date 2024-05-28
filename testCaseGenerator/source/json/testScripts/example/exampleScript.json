@@ -1,5 +1,5 @@
 {
-    "$schema": "../schemas/masterSchema.json",
+    "$schema": "../../schemas/masterSchema.json",
     "testScript": [
         {
             "operationType": "breakpoint",

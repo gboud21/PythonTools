@@ -1,0 +1,21 @@
+{
+    "$schema": "../../schemas/masterSchema.json",
+    "testScript": [
+        {
+            "operationType": "breakpoint",
+            "file": "MyFile.cpp",
+            "lineNumber": 2
+        },
+        {
+            "operationType": "breakpoint",
+            "class": "MyClass",
+            "functionName": "MyFunction",
+            "offset": "0x00000000"
+        },
+        {
+            "operationType": "delete",
+            "file": "MyFile2.cpp",
+            "lineNumber": 1
+        }
+    ]
+}

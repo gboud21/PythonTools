@@ -3,7 +3,7 @@
     "title": "delete",
     "description": "Deletes a breakpoint or a watchpoint.",
     "type": "object",
-    "oneOf": [
+    "anyOf": [
       {
         "properties": {
           "operationType":{
@@ -17,7 +17,7 @@
           "lineNumber":{
             "description": "The line number within the file to set a breakpoint on.",
             "type":"integer",
-            "exclusiveMinimum": 1
+            "exclusiveMinimum": 0
           }
         },
         "required": ["operationType", "file","lineNumber"]

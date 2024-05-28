@@ -1,10 +1,10 @@
+#Internal Imports
+from testCaseGenerator.source.com import testObjectType
+
 #######################################################################################################################
-### This class generates a test script in the GDB Output Format
-class GdbGenerator:
+### This class parses the test case inputs
+class TestObject:
     ###################################################################################################################
     ### Constructor
-    def __init__(self):
-        pass
-
-    def generateGDBTestCases(self, testCaseList):
-        pass
+    def __init__(self, objectType: testObjectType.TestObjectType):
+        self.__type = objectType
