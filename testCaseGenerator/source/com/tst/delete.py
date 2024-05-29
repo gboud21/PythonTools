@@ -1,6 +1,6 @@
 #Internal Imports
 from testCaseGenerator.source.com import testObjectType
-from tst import testObject
+from testCaseGenerator.source.com.tst import itestObject
 
 FILE_NAME_ID = "file"
 CLASS_NAME_ID = "className"
@@ -10,7 +10,7 @@ OFFSET_ID = "offset"
 
 #######################################################################################################################
 ### This class contains the data required to represent a Delete Command
-class DeletetObject(testObject.TestObject):
+class DeletetObject(itestObject.ITestObject):
     ###################################################################################################################
     ### Constructor
     def __init__(self, jsonData):

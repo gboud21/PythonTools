@@ -3,7 +3,7 @@ import json
 
 # Internal Imports
 from testCaseGenerator.source.com import testObjectType
-from tst import testObject
+from testCaseGenerator.source.com.tst import itestObject
 from tst import breakpoint
 from tst import delete
 
@@ -25,9 +25,9 @@ class TestCase:
         for index in jsonData:
             # If the Operation Type is identified then try to parse the object
             if testObjectType.OPERATION_TYPE_ID in jsonData[index]:
-                if(jsonData[index][testObjectType.OPERATION_TYPE_ID] == testObjectType.BREAKPOINT_ID):
+                if(jsonData[index][testObjectType.OPERATION_TYPE_ID][:testObjectType.BREAKPOINT_ID.__len__()] == testObjectType.BREAKPOINT_ID):
                     self.__testSteps.append(breakpoint.BreakpointObject(jsonData[index]))
-                elif(jsonData[index][testObjectType.OPERATION_TYPE_ID] == testObjectType.DELETE_ID):
+                elif(jsonData[index][testObjectType.OPERATION_TYPE_ID][:testObjectType.DELETE_ID.__len__()]  == testObjectType.DELETE_ID):
                     self.__testSteps.append(delete.DeletetObject(jsonData[index]))
             # Otherwise generate an error
             else:

@@ -2,12 +2,12 @@
     "$schema": "../../schemas/masterSchema.json",
     "testScript": [
         {
-            "operationType": "breakpoint",
+            "operationType": "breakpoint_file_line",
             "file": "MyFile.cpp",
             "lineNumber": 2
         },
         {
-            "operationType": "breakpoint",
+            "operationType": "breakpoint_class_function_offset",
             "class": "MyClass",
             "functionName": "MyFunction",
             "offset": "0x00000000"
