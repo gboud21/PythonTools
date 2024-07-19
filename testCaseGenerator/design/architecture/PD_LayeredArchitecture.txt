@@ -1,0 +1,72 @@
+@startuml
+top to bottom direction
+skinparam linetype ortho
+skinparam fixCircleLabelOverlapping true
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Layout Configuration
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+top to bottom direction
+skinparam linetype ortho
+skinparam fixCircleLabelOverlapping true
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Application Component
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package app{
+    [Application]
+}
+note right of app
+The app Layer provides the main control flow of the Test Case Generator
+The Application CSC is responsible for configuring, initializing and running the Test Case Processing
+end note
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Buissness Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package BuisnessLayer{
+    [Test Case Parser]
+    [Test Case Generator]
+    [Test Case Updater]
+}
+note right of BuisnessLayer
+The Buisness Layer provides the main processing logic surrounding the test data
+The Test Case Parser CSC provides the ability to read in and interpert existing Test Case Files
+The Test Case Generator CSC provides the ability to generate the generically defined test cases into a file format for a specific test tool.
+The Test Case Updater CSC provides the ability to automatically update existing Test Cases when the CSCI under test is modified.
+end note
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Common Layer
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package com{
+    [Error]
+    [File Operations]
+    [Logger]
+    [Test Objects]
+}
+note right of com
+The Common Layer provides the utilities and classes to be used throughout the application
+The Error CSC provides the representation of application errors and the data to be presented to the user
+The File Operations CSC provides a wrapper around the File I/O
+The Logger CSC is responsible for configuring the logging and outputing data to the user
+The Test Objects CSC provides a set of data structures that represent different test case constructs
+end note
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Configuration Data
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+package External{
+    [Configuration Data]
+}
+note right of External
+The Configuration Data provides the JSON files that define application configuration and the test cases
+end note
+
+/'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+Layout Modifiers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''/
+app --[hidden]down-- BuisnessLayer
+BuisnessLayer --[hidden]down-- com
+com --[hidden]down-- External
+@enduml
