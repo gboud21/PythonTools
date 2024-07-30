@@ -1,0 +1,20 @@
+add_subdirectory(cli)
+add_subdirectory(math)
+
+set(SRC
+    main.cpp
+    )
+
+add_executable(${PROJECT_NAME} 
+    ${SRC}
+    )
+
+target_link_libraries(${PROJECT_NAME} PUBLIC
+                    cli
+                    test_math
+                    )
+
+# Link in the Configuration File
+target_include_directories(${PROJECT_NAME} PUBLIC
+                        "${PROJECT_BINARY_DIR}"
+                        )

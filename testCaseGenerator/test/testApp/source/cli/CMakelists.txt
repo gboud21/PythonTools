@@ -1,0 +1,21 @@
+set(TARGET_NAME cli)
+
+set(HEADERS
+    CommandLineInterface.h
+    )
+
+set(SRC
+    CommandLineInterface.cpp
+    )
+
+add_library(${TARGET_NAME} STATIC
+            ${HEADERS}
+            ${SRC}
+            )
+
+# target_link_libraries(${TARGET_NAME}
+#                       common
+#                       )
+
+target_include_directories(${TARGET_NAME} PUBLIC
+                           "${CMAKE_CURRENT_SOURCE_DIR}")
